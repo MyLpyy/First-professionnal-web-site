@@ -1,0 +1,19 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Thibault Robineau",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expresse": "^1.0.2",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.16"
+  }
+}

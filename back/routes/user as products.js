@@ -1,7 +1,6 @@
 const express = require('express');
-const router = express.router();
+const router = express.Router();
 const user_as_products = require('../services/user_as_products.js');
-const { use } = require('./product');
 
 router.get('/getProductInCart', async function (req, res, next) {
     try {
@@ -30,20 +29,11 @@ router.put('/updateCartStatus', async function (req, res, next) {
     }
 });
 
-router.delete('/deleteProductFromCart', async function (req, res, next) {
+router.delete('/delete', async function (req, res, next) {
     try {
-        res.json(await user_as_products.deleteProductFromCart(req.body));
+        res.json(await user_as_products.deleteProduct(req.body));
     } catch (err) {
-        console.error(`Error while deleting product from cart`, err.message);
-        next(err);
-    }
-});
-
-router.delete('/clearPayedStatus', async function (req, res, next) {
-    try {
-        res.json(await user_as_products.clearPayedStatus(req.body));
-    } catch (err) {
-        console.error(`Error while deleting payed product`, err.message);
+        console.error(`Error while deleting product`, err.message);
         next(err);
     }
 });

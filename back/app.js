@@ -3,8 +3,8 @@ const app = express();
 const PORT = process.env.PORT || 4001;
 const productRouter = require('./routes/product.js');
 const customersRouter = require('./routes/customers.js');
+const user_as_productsRouter = require('./routes/user as products.js');
 const cors = require('cors');
-const { contentType } = require('express/lib/response');
 
 app.use(express.json());
 app.use(
@@ -17,10 +17,7 @@ app.use(cors());
 
 app.use("/products", productRouter);
 app.use("/customers", customersRouter);
-
-app.get("/", (req, res) => {
-  res.json({ message: "ok" }).send(console.log('ok'));
-});
+app.use("/user_as_products", user_as_productsRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

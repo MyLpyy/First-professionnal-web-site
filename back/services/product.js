@@ -2,27 +2,40 @@ const db = require('./db');
 const helper = require('../helper');
 
 async function getEveryProduct() {
-    const rows = await db.query(
-        `SELECT * FROM product`
-        );
 
-        const data = helper.emptyOrRows(rows);
-        
-        return data;
+  const rows = await db.query(
+    `SELECT * FROM product`
+  );
+
+  const data = helper.emptyOrRows(rows);
+
+  return data;
 }
 
 async function getProductByType(type) {
-    const rows = await db.query(
-        `SELECT * FROM product WHERE type = "${type}";`
-    );
 
-    const data = helper.emptyOrRows(rows);
+  const rows = await db.query(
+    `SELECT * FROM product WHERE type = "${type}"`
+  );
 
-    return data;
+  const data = helper.emptyOrRows(rows);
+
+  return data;
+}
+
+async function getProductById(id) {
+
+  const rows = await db.query(
+    `SELECT * FROM product WHERE product_id = ${id}`
+  );
+
+  const data = helper.emptyOrRows(rows);
+
+  return data;
 }
 
 /*fix 'NULL' issue + d'autres trucs*/
-async function addProduct(product){
+async function addProduct(product) {
 
   const result = await db.query(
     `INSERT INTO product (description, img_path, price, name, size, type, genre) 
@@ -35,31 +48,22 @@ async function addProduct(product){
     message = 'Product added successfully';
   }
 
-  return {message};
+  return { message };
 }
 
-async function getProductById(id){
-    const rows = await db.query(
-        `SELECT * FROM product WHERE product_id = ${id}`
-    );
+async function deleteProduct(id) {
+  
+  const result = await db.query(
+    `DELETE FROM product WHERE product_id = ${id}`
+  );
 
-        const data = helper.emptyOrRows(rows);
+  let message = 'Error while deleting product';
 
-        return data;
-}
+  if (result.affectedRows) {
+    message = 'Product deleted succesfully';
+  }
 
-async function deleteProduct(id){
-    const result = await db.query(
-        `DELETE FROM product WHERE product_id = ${id}`
-    );
-
-    let message = 'Error while deleting product';
-
-    if(result.affectedRows) {
-        message = 'Product deleted succesfully';
-    }
-
-    return {message};
+  return { message };
 }
 
 module.exports = {

@@ -40,31 +40,16 @@ async function updateCartStatus(values) {
     return message;
 }
 
-async function deleteProductFromCart(values) {
+async function deleteProduct(values) {
     const result = await db.query(
         `DELETE FROM user_as_products 
-        WHERE customers_id = ${values.customers_id} AND product_id = ${values.product_id} AND status = "WAITING"`
+        WHERE customers_id = ${values.customers_id} AND product_id = ${values.product_id} AND status = ${values.status}`
     );
 
-    let message = 'Error while deleting product from cart';
+    let message = 'Error while deleting';
 
     if (result.affectedRows) {
-        message = 'Product deleted successfully from cart';
-    }
-
-    return message;
-}
-
-async function clearPayedStatus(values) {
-    const result = await db.query(
-        `DELETE FROM user_as_products
-        WHERE customers_id = ${values.customers_id} AND product_id = ${values.product_id} AND status = "PAYED"`
-    );
-
-    let message = 'Error while deleting payed product';
-
-    if (result.affectedRows) {
-        message = 'Payed product deleted successfully';
+        message = 'Product deleted successfully';
     }
 
     return message;
@@ -74,6 +59,5 @@ module.exports = {
     addProductToCart,
     getProductInCart,
     updateCartStatus,
-    deleteProductFromCart,
-    clearPayedStatus
+    deleteProduct
 }

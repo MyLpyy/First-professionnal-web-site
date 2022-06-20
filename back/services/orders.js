@@ -15,7 +15,7 @@ async function getOrderByStatus(values) {
 async function getByOrderId(values) {
 
     const rows = await db.query(
-        `SELECT * FROM`
+        `SELECT * FROM orders WHERE orders_id = ${values.orders_id}`
     );
 
     const data = helper.emptyOrRows(rows);
@@ -23,6 +23,24 @@ async function getByOrderId(values) {
     return data;
 }
 
+async function addOrder(values) {
+
+    const result = await db.query(
+        `INSERT INTO orders (customers_id)
+        VALUES (${values.customers_id})`
+    );
+
+    let message = 'Error while adding order';
+
+    if (result.affectedRows) {
+        message = 'Order added successfully';
+    }
+
+    return message;
+}
+
 module.exports = {
-    getOrderByStatus
+    getOrderByStatus,
+    getByOrderId,
+    addOrder
 }

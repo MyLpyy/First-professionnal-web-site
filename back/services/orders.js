@@ -23,6 +23,17 @@ async function getByOrderId(values) {
     return data;
 }
 
+async function getOrder(values) {
+
+    const rows = await db.query(
+        `SELECT * FROM orders WHERE customers_id = ${values.customers_id}`
+    );
+
+    const data = helper.emptyOrRows(rows);
+
+    return data;
+}
+
 async function addOrder(values) {
 
     const result = await db.query(
@@ -39,8 +50,43 @@ async function addOrder(values) {
     return message;
 }
 
+async function updateOrder(values) {
+
+    const result = await db.query(
+        `UPDATE orders
+        SET status = ${values.status} WHERE customers_id = ${values.customers_id}`
+    );
+
+    let message = 'Error while updating order';
+
+    if (result.affectedRows) {
+        message = 'Order updated successfully';
+    }
+
+    return message;
+}
+
+async function deleteOrder(values) {
+
+    const result = await db.query(
+        `DELETE FROM orders
+        WHERE orders_id = ${values.orders_id}`
+    );
+
+    let message = 'Error while deleting order';
+
+    if (result.affectedRows) {
+        message = 'Order deleted successfully';
+    }
+
+    return message;
+}
+
 module.exports = {
     getOrderByStatus,
     getByOrderId,
-    addOrder
+    getOrder,
+    addOrder,
+    updateOrder,
+    deleteOrder
 }

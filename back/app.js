@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 4001;
 const productRouter = require('./routes/product.js');
 const customersRouter = require('./routes/customers.js');
 const user_as_productsRouter = require('./routes/user as products.js');
+const ordersRouter = require('./routes/orders.js');
+const orders_adressesRouter = require('./routes/orders_adresses.js');
 const cors = require('cors');
 
 app.use(express.json());
@@ -18,6 +20,8 @@ app.use(cors());
 app.use("/products", productRouter);
 app.use("/customers", customersRouter);
 app.use("/user_as_products", user_as_productsRouter);
+app.use("/orders", ordersRouter);
+app.use("/orders_adresses", orders_adressesRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

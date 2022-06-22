@@ -9,6 +9,7 @@ create new order orders_id = auto / customers_id = customer logged / status = pr
 find order_id with customers_id and status = 'process' for order adresses table }
 
 INSERT order adresses with orders_id and customers_id (html form valide values)
+update order status to 'PENDING'
 
 order adresses module : get where (orders_id, customers_id),
 add with (orders_id, customers_id), delete where (orders_id, customers_id)
@@ -17,4 +18,4 @@ order module :get ByStatus where (customers_id),
 get where (customers_id), get ByOrderId where (orders_id), 
 add with(customers_id),
 update where (orders_id), 
-delete where (orders_id)
+delete where (orde 

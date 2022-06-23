@@ -10,19 +10,19 @@ async function getEveryCustomers() {
         return data;
 }
 
-async function getCustomersById(id) {
+async function getCustomersById(values) {
     const rows = await db.query(
-        `SELECT * FROM customers WHERE customers_id = ${id}`
+        `SELECT * FROM customers WHERE customers_id = ${values.id}`
     );
     const data = helper.emptyOrRows(rows);
 
     return data;
 }
 
-async function addCustomers(customers) {
+async function addCustomers(values) {
     const result = await db.query(
         `INSERT INTO customers (name, first_name, phone_number, email, password) 
-        VALUES ("${customers.name}", "${customers.first_name}", ${customers.phone_number}, "${customers.email}", "${customers.password}")`
+        VALUES (${values.name}, ${values.first_name}, ${values.phone_number}, ${values.email}, ${values.password})`
     );
 
     let message = 'Error while adding new customer';
@@ -34,10 +34,10 @@ async function addCustomers(customers) {
     return message;
 }
 
-/*customer.values -> String("");*/
-async function updateCustomers(customer) {
+/*body values entre '' si necessaire*/
+async function updateCustomers(values) {
     const result = await db.query(
-        `UPDATE customers SET ${customer.updateCol} = "${customer.values}" WHERE customers_id = ${customer.id};`
+        `UPDATE customers SET ${values.updateCol} = ${values.value} WHERE customers_id = ${values.id};`
     );
 
     let message = 'Error while updating customer';
@@ -49,23 +49,23 @@ async function updateCustomers(customer) {
     return message;
 }
 
-async function deleteCustomers(id) {
+async function deleteCustomers(values) {
     const result = await db.query(
-        `DELETE FROM Customers WHERE customers_id = ${id}`
+        `DELETE FROM customers WHERE customers_id = ${values.id}`
     );
 
     let message = 'Error while deleting customer';
 
     if(result.affectedRows) {
-        message = 'Customer deleted succesfully';
+        message = `Customer with id ${values.id} deleted succesfully`;
     }
 
     return {message};
 }
 
-async function setCustomersToken(customer) {
+async function setCustomersToken(values) {
     const result = await db.query(
-        `UPDATE customers SET user_token = "${customer.token}" WHERE customers_id = ${customer.id};`
+        `UPDATE customers SET token = ${values.token} WHERE customers_id = ${values.id};`
     );
 
     let message = 'Error while updating customer token';
@@ -77,9 +77,9 @@ async function setCustomersToken(customer) {
     return message;
 }
 
-async function deleteCustomersToken(id) {
+async function deleteCustomersToken(values) {
     const result = await db.query(
-        `UPDATE customers SET user_token = NULL WHERE customers_id = ${id}`
+        `UPDATE customers SET token = NULL WHERE customers_id = ${values.id}`
     );
 
     let message = 'Error while deleting user token';
@@ -91,9 +91,9 @@ async function deleteCustomersToken(id) {
     return message;
 }
 
-async function getCustomersToken(id) {
+async function getCustomersToken(values) {
     const rows = await db.query(
-        `SELECT user_token FROM customers WHERE customers_id = ${id}`
+        `SELECT token FROM customers WHERE customers_id = ${values.id}`
     );
     const data = helper.emptyOrRows(rows);
 

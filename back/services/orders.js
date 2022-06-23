@@ -1,5 +1,5 @@
-const db = require('./db.js');
-const helper = require('../helper.js');
+const db = require('./db');
+const helper = require('../helper');
 
 async function getOrderByStatus(values) {
 

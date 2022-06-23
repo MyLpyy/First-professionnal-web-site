@@ -12,10 +12,10 @@ async function getEveryProduct() {
   return data;
 }
 
-async function getProductByType(type) {
+async function getProductByType(values) {
 
   const rows = await db.query(
-    `SELECT * FROM product WHERE type = "${type}"`
+    `SELECT * FROM product WHERE type = "${values.type}"`
   );
 
   const data = helper.emptyOrRows(rows);
@@ -23,10 +23,10 @@ async function getProductByType(type) {
   return data;
 }
 
-async function getProductById(id) {
+async function getProductById(values) {
 
   const rows = await db.query(
-    `SELECT * FROM product WHERE product_id = ${id}`
+    `SELECT * FROM product WHERE product_id = ${values.id}`
   );
 
   const data = helper.emptyOrRows(rows);
@@ -35,11 +35,11 @@ async function getProductById(id) {
 }
 
 /*fix 'NULL' issue + d'autres trucs*/
-async function addProduct(product) {
+async function addProduct(values) {
 
   const result = await db.query(
     `INSERT INTO product (description, img_path, price, name, size, type, genre) 
-    VALUES ("${product.description}", "${product.img_path}", ${product.price}, "${product.name}", "${product.size}", "${product.type}", "${product.genre}")`
+    VALUES ("${values.description}", "${values.img_path}", ${values.price}, "${values.name}", "${values.size}", "${values.type}", "${values.genre}")`
   );
 
   let message = 'Error while adding new product';
@@ -51,10 +51,10 @@ async function addProduct(product) {
   return { message };
 }
 
-async function deleteProduct(id) {
-  
+async function deleteProduct(values) {
+
   const result = await db.query(
-    `DELETE FROM product WHERE product_id = ${id}`
+    `DELETE FROM product WHERE product_id = ${values.id}`
   );
 
   let message = 'Error while deleting product';

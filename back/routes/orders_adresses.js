@@ -11,7 +11,7 @@ router.get('/get', async function (req, res, next) {
     }
 });
 
-router.post('/addAdresses', async function (req, res, next) {
+router.post('/add', async function (req, res, next) {
     try {
         res.json(await orders_adresses.addAdresses(req.body));
     } catch (err) {
@@ -20,7 +20,7 @@ router.post('/addAdresses', async function (req, res, next) {
     }
 });
 
-router.delete('/deleteAdresses', async function (req, res, next) {
+router.delete('/delete', async function (req, res, next) {
     try {
         res.json(await orders_adresses.deleteAdresses(req.body));
     } catch (err) {

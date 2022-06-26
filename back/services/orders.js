@@ -4,7 +4,7 @@ const helper = require('../helper');
 async function getOrderByStatus(values) {
 
     const rows = await db.query(
-        `SELECT * FROM orders WHERE customers_id = ${values.customers_id} AND order_status = ${values.order_status}`
+        `SELECT * FROM orders WHERE customers_id = ${values.customers_id} AND status = ${values.order_status}`
     );
 
     const data = helper.emptyOrRows(rows);
@@ -54,7 +54,7 @@ async function updateOrder(values) {
 
     const result = await db.query(
         `UPDATE orders
-        SET status = ${values.status} WHERE customers_id = ${values.customers_id}`
+        SET status = ${values.status} WHERE customers_id = ${values.customers_id} AND orders_id = ${values.orders_id}`
     );
 
     let message = 'Error while updating order';

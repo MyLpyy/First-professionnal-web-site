@@ -4,7 +4,7 @@ const helper = require('../helper');
 async function getAdresses(values) {
 
     const rows = await db.query(
-        `SELECT * FROM orders_adresses WHERE orders_id = ${values.orders_id} AND customers_id = ${values.customers_id}`
+        `SELECT * FROM orders_adresses WHERE orders_id = ${values.orders_id}`
     );
 
     const data = helper.emptyOrRows(rows);

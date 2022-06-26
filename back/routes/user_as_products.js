@@ -6,7 +6,16 @@ router.get('/get', async function (req, res, next) {
     try {
         res.json(await user_as_products.get(req.body));
     } catch (err) {
-        console.error(`Error while getting product in cart`, err.message);
+        console.error(`Error while getting product`, err.message);
+        next(err);
+    }
+});
+
+router.get('/getByStatus', async function (req, res, next) {
+    try {
+        res.json(await user_as_products.getByStatus(req.body));
+    } catch (err) {
+        console.error(`Error while getting product`, err.message);
         next(err);
     }
 });
@@ -24,7 +33,16 @@ router.put('/update', async function (req, res, next) {
     try {
         res.json(await user_as_products.update(req.body));
     } catch (err) {
-        console.error(`Error while updating product status`, err.message);
+        console.error(`Error while updating product`, err.message);
+        next(err);
+    }
+});
+
+router.put('/updateOrder', async function (req, res, next) {
+    try {
+        res.json(await user_as_products.updateOrder(req.body));
+    } catch (err) {
+        console.error(`Error while updating product`, err.message);
         next(err);
     }
 });

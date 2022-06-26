@@ -10,6 +10,15 @@ async function get(values) {
     return data;
 }
 
+async function getByStatus(values) {
+    const rows = await db.query(
+        `SELECT * FROM user_as_products WHERE customers_id = ${values.id} AND ${values.col} = ${values.value}`
+    );
+    const data = helper.emptyOrRows(rows);
+    
+    return data;
+}
+
 async function add(values) {
     const result = await db.query(
         `INSERT INTO user_as_products (customers_id, product_id) 
@@ -29,6 +38,21 @@ async function update(values) {
     const result = await db.query(
         `UPDATE user_as_products 
         SET ${values.updateCol} = ${values.value} WHERE customers_id = ${values.customers_id}`
+    );
+
+    let message = 'Error while updating product status';
+
+    if (result.affectedRows) {
+        message = 'Product status updated successfully';
+    }
+
+    return message;
+}
+
+async function updateOrder(values) {
+    const result = await db.query(
+        `UPDATE user_as_products 
+        SET ${values.column[0]} = ${values.value[0]} WHERE customers_id = ${values.customers_id} AND ${values.column[1]} = ${values.value[1]}`
     );
 
     let message = 'Error while updating product status';
@@ -73,7 +97,9 @@ async function deleteOrder(values) {
 module.exports = {
     add,
     get,
+    getByStatus,
     update,
+    updateOrder,
     deleteProduct,
     deleteOrder
 }

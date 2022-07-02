@@ -4,7 +4,8 @@ CREATE TABLE customers (
     first_name TEXT,
     phone_number INTEGER,
     email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL
+    password VARCHAR(100) NOT NULL,
+    token VARCHAR(250)
 );
 
 CREATE TABLE product (

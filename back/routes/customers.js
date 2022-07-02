@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const customers = require('../services/customers');
 
-router.get('/', async function (req, res, next) {
+router.get('/get', async function (req, res, next) {
     try {
         res.json(await customers.getEveryCustomers());
     } catch (err) {

@@ -2,12 +2,13 @@ const db = require('./db');
 const helper = require('../helper');
 
 async function getEveryCustomers() {
+
     const rows = await db.query(
         `SELECT * FROM customers`
-        );
-        const data = helper.emptyOrRows(rows);
-        
-        return data;
+    );
+    const data = helper.emptyOrRows(rows);
+
+    return data;
 }
 
 async function getCustomersById(values) {
@@ -56,11 +57,11 @@ async function deleteCustomers(values) {
 
     let message = 'Error while deleting customer';
 
-    if(result.affectedRows) {
+    if (result.affectedRows) {
         message = `Customer with id ${values.id} deleted succesfully`;
     }
 
-    return {message};
+    return { message };
 }
 
 async function setCustomersToken(values) {

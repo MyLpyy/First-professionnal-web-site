@@ -11,6 +11,15 @@ router.get('/get', async function (req, res, next) {
     }
 });
 
+router.get('/randomProducts', async function (req, res, next) {
+    try {
+        res.json(await product.randomProducts());
+    } catch (err) {
+        console.error(`Error while getting count of product`, err.message);
+        next(err);
+    }
+});
+
 router.get('/getByType', async function (req, res, next) {
     try {
         res.json(await product.getProductByType(req.body));
@@ -22,7 +31,7 @@ router.get('/getByType', async function (req, res, next) {
 
 router.get('/getById', async function (req, res, next) {
     try {
-        res.json(await product.getProductById(req.body));
+        res.json(await product.getProductById(req.query));
     } catch (err) {
         console.error(`Error while getting product by id `, err.message);
         next(err);

@@ -13,7 +13,7 @@ router.get('/get', async function (req, res, next) {
 
 router.get('/getById', async function (req, res, next) {
     try {
-        res.json(await customers.getCustomersById(req.body));
+        res.json(await customers.getCustomersById(req.query.id));
     } catch (err) {
         console.error(`Error while getting customer by id`, err.message);
         next(err);
@@ -58,7 +58,7 @@ router.put('/setToken', async function (req, res, next) {
 
 router.get('/getUserToken', async function (req, res, next) {
     try {
-        res.json(await customers.getCustomersToken(req.body));
+        res.json(await customers.getCustomersToken(req.query));
     } catch (err) {
         console.error(`Error while getting user token`, err.message);
         next(err);

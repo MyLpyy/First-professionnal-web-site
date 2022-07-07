@@ -12,6 +12,15 @@ async function getEveryProduct() {
   return data;
 }
 
+async function randomProducts() {
+
+  const rows = await db.query(
+    `SELECT * FROM product ORDER BY RAND() LIMIT 6`
+  );
+
+  return rows;
+}
+
 async function getProductByType(values) {
 
   const rows = await db.query(
@@ -35,11 +44,12 @@ async function getProductById(values) {
 }
 
 /*fix 'NULL' issue + d'autres trucs*/
-async function addProduct(values) {
-
+async function addProduct(data) {
+  const keys = Object.keys(data).join(",");
+  const values = Object.values(data).map(value => `'${value}'`).join(",");
+  
   const result = await db.query(
-    `INSERT INTO product (description, img_path, price, name, size, type, genre) 
-    VALUES ("${values.description}", "${values.img_path}", ${values.price}, "${values.name}", "${values.size}", "${values.type}", "${values.genre}")`
+    `INSERT INTO product (${keys}) VALUES (${values})`
   );
 
   let message = 'Error while adding new product';
@@ -71,5 +81,6 @@ module.exports = {
   getProductByType,
   deleteProduct,
   getProductById,
-  addProduct
+  addProduct,
+  randomProducts
 }

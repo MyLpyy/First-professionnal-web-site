@@ -35,7 +35,7 @@ async function getProductByType(values) {
 async function getProductById(values) {
 
   const rows = await db.query(
-    `SELECT * FROM product WHERE product_id = ${values.id}`
+    `SELECT * FROM product WHERE id = ${values.id}`
   );
 
   const data = helper.emptyOrRows(rows);
@@ -45,9 +45,10 @@ async function getProductById(values) {
 
 /*fix 'NULL' issue + d'autres trucs*/
 async function addProduct(data) {
+  
   const keys = Object.keys(data).join(",");
   const values = Object.values(data).map(value => `'${value}'`).join(",");
-  
+
   const result = await db.query(
     `INSERT INTO product (${keys}) VALUES (${values})`
   );
@@ -64,7 +65,7 @@ async function addProduct(data) {
 async function deleteProduct(values) {
 
   const result = await db.query(
-    `DELETE FROM product WHERE product_id = ${values.id}`
+    `DELETE FROM product WHERE id = ${values.id}`
   );
 
   let message = 'Error while deleting product';

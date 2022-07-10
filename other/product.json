@@ -1,0 +1,122 @@
+[
+  {
+    "id": 21,
+    "description": "Le passé fait un retour en force, avec encore plus de style. Célébrez les 50 ans d'innovations de Nike avec cette version tendance de la chaussure Waffle emblématique qui vous transporte dans le temps pour remonter aux origines.",
+    "img_path": "../images/produit1.webp",
+    "price": "129.99",
+    "name": "Nike Air Force 1 '07",
+    "size": "40",
+    "type": "sneackers",
+    "genre": "Chaussure pour Homme"
+  },
+  {
+    "id": 23,
+    "description": "Le passé fait un retour en force, avec encore plus de style. Célébrez les 50 ans d'innovations de Nike avec cette version tendance de la chaussure Waffle emblématique qui vous transporte dans le temps pour remonter aux origines.",
+    "img_path": "../images/produit2.webp",
+    "price": "129.99",
+    "name": "Air Jordan 1 Low SE",
+    "size": "38",
+    "type": "sneackers",
+    "genre": "Chaussure pour Homme"
+  },
+  {
+    "id": 24,
+    "description": "Le passé fait un retour en force, avec encore plus de style. Célébrez les 50 ans d'innovations de Nike avec cette version tendance de la chaussure Waffle emblématique qui vous transporte dans le temps pour remonter aux origines.",
+    "img_path": "../images/produit3.webp",
+    "price": "129.99",
+    "name": "Nike Air Force 1 PLT.AF.ORM",
+    "size": "35",
+    "type": "sneackers",
+    "genre": "Chaussure pour Femme"
+  },
+  {
+    "id": 25,
+    "description": "Le passé fait un retour en force, avec encore plus de style. Célébrez les 50 ans d'innovations de Nike avec cette version tendance de la chaussure Waffle emblématique qui vous transporte dans le temps pour remonter aux origines.",
+    "img_path": "../images/produit4.webp",
+    "price": "119.99",
+    "name": "Nike Air Max Dawn",
+    "size": "36",
+    "type": "sneackers",
+    "genre": "Chaussure pour Femme"
+  },
+  {
+    "id": 26,
+    "description": "Lorsque le soleil brille, le short tissé Nike Sportswear Sport Essentials+ est l'allié qu'il vous faut. Doux et souple, le tissu tissé affiche des logos Nike distordus.",
+    "img_path": "../images/produit5.webp",
+    "price": "44.99",
+    "name": "Nike Sportswear Sport Essentials+",
+    "size": "M",
+    "type": "sportswears",
+    "genre": "Short tissé pour Homme"
+  },
+  {
+    "id": 27,
+    "description": "Comme les autres maillots de notre collection Match, ce maillot associe détails authentiques et tissu léger à séchage rapide pour offrir un maximum de fraîcheur et de confort aux plus grands joueurs professionnels.",
+    "img_path": "../images/produit6.webp",
+    "price": "139.99",
+    "name": "Liverpool FC 2022/23 Match Domicile",
+    "size": "M",
+    "type": "sportswears",
+    "genre": "Maillot de football Nike Dri-FIT ADV pour Homme"
+  },
+  {
+    "id": 28,
+    "description": "Léger, doux et extensible, le legging Nike Dri-FIT Retro Run s'inspire du passé avec un motif façon collage audacieux, tout en vous offrant une protection optimale par temps chaud.",
+    "img_path": "../images/produit7.webp",
+    "price": "44.99",
+    "name": "Nike Dri-FIT Retro Run",
+    "size": "S",
+    "type": "sportswears",
+    "genre": "Haut de running à manches courtes pour Femme"
+  },
+  {
+    "id": 29,
+    "description": "Les couleurs audacieuses donnent un look classique à votre run. Le haut Nike Dri-FIT Retro Run est légèrement extensible et offre une sensation de douceur et de légèreté pour une tenue impeccable jusqu'à la fin de votre run.",
+    "img_path": "../images/produit8.webp",
+    "price": "74.99",
+    "name": "Nike Dri-FIT Retro Run",
+    "size": "S",
+    "type": "sportswears",
+    "genre": "Legging de running 7/8 taille mi-haute avec poches pour Femme"
+  },
+  {
+    "id": 30,
+    "description": "Nous nous sommes associés à la Ligue majeure de baseball pour créer la veste universitaire Nike SB x MLB, adaptée au skateboard.",
+    "img_path": "../images/produit9.webp",
+    "price": "129.99",
+    "name": "Nike SB X MLB",
+    "size": "M",
+    "type": "streetwears",
+    "genre": "Veste de skateboard universitaire"
+  },
+  {
+    "id": 31,
+    "description": "Vous ne pouvez pas porter de jean en denim sur le parcours, mais vous pouvez porter le pantalon Nike Dri-FIT Repel.",
+    "img_path": "../images/produit10.webp",
+    "price": "84.99",
+    "name": "Nike Dri-FIT Repel",
+    "size": "M",
+    "type": "streetwears",
+    "genre": "Pantalon de golf coupe slim 5 poches pour Homme(NULL)"
+  },
+  {
+    "id": 32,
+    "description": "Nous nous sommes associés à la Ligue majeure de baseball pour créer la veste universitaire Nike SB x MLB, adaptée au skateboard.",
+    "img_path": "../images/produit11.webp",
+    "price": "129.99",
+    "name": "Nike SB X MLB",
+    "size": "M",
+    "type": "streetwears",
+    "genre": "Veste de skateboard universitaire"
+  },
+  {
+    "id": 33,
+    "description": "Partez à la conquête de la nature grâce à la conception solide et déperlante du pantalon cargo Nike ACG « Smith Summit ».",
+    "img_path": "../images/produit12.webp",
+    "price": "179.99",
+    "name": "Nike ACG « Smith Summit »(NULL)",
+    "size": "L",
+    "type": "streetwears",
+    "genre": "Pantalon cargo pour Femme"
+  }
+]

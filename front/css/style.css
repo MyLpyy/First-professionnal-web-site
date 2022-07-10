@@ -14,3 +14,8 @@ h2 {
 .logo {
     height: 150px;
 }
+
+.randomItems article img {
+    width: 160px;
+    height: 160px;
+}

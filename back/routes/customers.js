@@ -11,9 +11,9 @@ router.get('/get', async function (req, res, next) {
     }
 });
 
-router.get('/getById', async function (req, res, next) {
+router.get('/getByValues', async function (req, res, next) {
     try {
-        res.json(await customers.getCustomersById(req.query.id));
+        res.json(await customers.getCustomersByValues(req.query));
     } catch (err) {
         console.error(`Error while getting customer by id`, err.message);
         next(err);
@@ -52,15 +52,6 @@ router.put('/setToken', async function (req, res, next) {
         res.json(await customers.setCustomersToken(req.body));
     } catch (err) {
         console.error(`Error while setting user token`, err.message);
-        next(err);
-    }
-});
-
-router.get('/getUserToken', async function (req, res, next) {
-    try {
-        res.json(await customers.getCustomersToken(req.query));
-    } catch (err) {
-        console.error(`Error while getting user token`, err.message);
         next(err);
     }
 });

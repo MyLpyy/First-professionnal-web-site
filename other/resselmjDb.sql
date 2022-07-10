@@ -1,5 +1,5 @@
 CREATE TABLE customers (
-    customers_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     name TEXT NOT NULL,
     first_name TEXT,
     phone_number INTEGER,
@@ -9,7 +9,7 @@ CREATE TABLE customers (
 );
 
 CREATE TABLE product (
-    product_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     description VARCHAR(255) DEFAULT 'No description',
     img_path VARCHAR(255) NOT NULL,
     price DECIMAL(20,2) NOT NULL,

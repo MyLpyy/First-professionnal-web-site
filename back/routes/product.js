@@ -22,7 +22,7 @@ router.get('/randomProducts', async function (req, res, next) {
 
 router.get('/getByType', async function (req, res, next) {
     try {
-        res.json(await product.getProductByType(req.body));
+        res.json(await product.getProductByType(req.query));
     } catch (err) {
         console.error(`Error while getting product by type ${req.body.type}`, err.message);
         next(err);

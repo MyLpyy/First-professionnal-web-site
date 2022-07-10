@@ -37,31 +37,25 @@
 
     <main class="BlockContainer">
         <div class="WidthBlock">
-            <div class="menu">
-                <nav>
-                    <ul>
-                        <a href="">
-                            <li>Sneackers</li>
-                        </a>
-                        <a href="">
-                            <li>Sportswear</li>
-                        </a>
-                        <a href="">
-                            <li>Streetwear</li>
-                        </a>
-                    </ul>
-                </nav>
+            <div class="LoginBlock">
+                <h2>Login</h2>
+                <form method="get" class="LoginForm" onsubmit="return false">
+                    <div class="UserBlock">
+                        <input type="email" name="username" id="username" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="UserBlock">
+                        <input type="password" name="password" id="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="submitBlock">
+                        <input type="submit" value="Login" id="loginButton">
+                        <a href="./registration.html" class="registerButton">Register</a>
+                        <!-- <input type="submit" value="Register" id="registerButton">
+                        <a href="" id="loginButton">Login</a> -->
+                    </div>
+                </form>
             </div>
-            <section class="randomItems" id="randomItems">
-                <!-- <a href="">
-                    <article>
-                        <img src="" alt="item 1">
-                        <h3 class="productName">Item 1</h3>
-                        <h4 class="productPrice">110€</h4>
-                        <p class="productDescription">Un paire de chaussure agreable</p>
-                    </article>
-                </a> -->
-            </section>
         </div>
     </main>
     <footer>
@@ -87,8 +81,15 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="../js/loginJs/logUser.js"></script>
     <script type="module" src="../js/indexJs/login.js"></script>
-    <script type="module" src="../js/indexJs/product.js"></script>
 </body>
 
 </html>
+
+<!-- <form method="get" onsubmit="return false">
+</div>
+<div class="cart__order__form__submit">
+    <input type="submit" value="Commander !" id="addProduct">
+</div>
+</form> -->

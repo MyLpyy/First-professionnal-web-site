@@ -7,3 +7,5 @@ var token = function() {
 };
 
 token(); // "bnh5yzdirjinqaorq0ox1tf383nb3xr"
+
+

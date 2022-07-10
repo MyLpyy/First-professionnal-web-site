@@ -5,7 +5,7 @@ const renderProduct = async () => {
         const response = await fetch(`${API_ENDPOINT}/products/randomProducts`);
         const product = await response.json();
 
-        let container = document.querySelector("#RandomItems");
+        let container = document.querySelector("#randomItems");
         product.forEach (element => {
             let content = `
             <a href="">

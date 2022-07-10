@@ -5,9 +5,9 @@ let userId = localStorage.getItem('userId');
 
 const getUserToken = async (userId) => {
     try {
-        const response = await fetch(`${API_ENDPOINT}/customers/getUserToken?id=${userId}`);
+        const response = await fetch(`${API_ENDPOINT}/customers/getByValues?value=${userId}&col=id`);
         const token = await response.json();
-        return JSON.stringify(token[0].token);
+        return token[0].token;
     } catch (err) {
         console.log(err);
     }
@@ -26,14 +26,14 @@ const auto_login = async () => {
             } else {
                 let container = document.querySelector("#nav_panel");
                 container.innerHTML += `
-                <a class="logged_button" href="">
+                <a class="logged_button" href="./login.html">
                 <li>Login</li>
                 </a>`
             }
         } else {
             let container = document.querySelector("#nav_panel");
             container.innerHTML += `
-            <a class="logged_button" href="">
+            <a class="logged_button" href="./login.html">
             <li>Login</li>
             </a>`
         }

@@ -70,7 +70,7 @@ async function deleteCustomers(values) {
 
 async function setCustomersToken(values) {
     const result = await db.query(
-        `UPDATE customers SET token = ${values.token} WHERE id = ${values.id};`
+        `UPDATE customers SET token = "${values.token}" WHERE id = ${values.id};`
     );
 
     let message = 'Error while updating customer token';

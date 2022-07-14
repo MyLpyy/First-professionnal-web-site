@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="description" content="Plateforme de vetement de sport">
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/loginMenu.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -26,9 +28,27 @@
                         <a href="">
                             <li>Panier</li>
                         </a>
-                        <!-- <a href="">
-                            <li>Login</li>
-                        </a> -->
+                        <div class="menuPopup" id="menuPopup">
+                            <button type="button" class="menuButton" id="menuButton">Account</button>
+                            <div class="loggedPopup" id="loggedPopup">
+                                <div class="body">
+                                    <ul>
+                                        <li><img src=""><a id="account">My account</a></li>
+                                        <li><img src=""><a id="editProfile">Edit profile</a></li>
+                                        <li><img src=""><a href="">Help</a></li>
+                                        <li><img src=""><button type="button" class="logoutButton" id="logoutButton">Logout</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="loginPopup" id="loginPopup">
+                                <div class="body">
+                                    <ul>
+                                        <li><a href="./login.html">Login</a></li>
+                                        <li><a href="./registration.html">Register</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </ul>
                 </nav>
             </div>
@@ -41,20 +61,28 @@
                 <h2>Login</h2>
                 <form method="get" class="LoginForm" onsubmit="return false">
                     <div class="UserBlock">
-                        <input type="email" name="username" id="username" required>
+                        <input type="text" name="username" id="username" placeholder="username@gmail.com">
                         <label for="username">Username</label>
                     </div>
                     <div class="UserBlock">
-                        <input type="password" name="password" id="password" required>
+                        <input type="password" name="password" id="password" placeholder="**********">
                         <label for="password">Password</label>
                     </div>
                     <div class="submitBlock">
                         <input type="submit" value="Login" id="loginButton">
-                        <a href="./registration.html" class="registerButton">Register</a>
-                        <!-- <input type="submit" value="Register" id="registerButton">
-                        <a href="" id="loginButton">Login</a> -->
+                        <button class="registerButton" id="registerButton">Register</button>
                     </div>
                 </form>
+                <div class="popup" id="popup">
+                    <div class="popup-body">
+                        L'email ou le mot de passe renseigner est incorrect ou n'existe pas.
+                    </div>
+                    <div class="popup-button">
+                        <button type="button" class="retryButton" id="retryButton">Réessayer</button>
+                        <button type="button" class="registerButton" id="registerButton">Register</button>
+                    </div>
+                </div>
+                <div id="overlay"></div>
             </div>
         </div>
     </main>
@@ -81,7 +109,7 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="../js/loginJs/logUser.js"></script>
+    <script type="module" src="../js/loginJs/loginScript.js"></script>
     <script type="module" src="../js/indexJs/login.js"></script>
 </body>
 

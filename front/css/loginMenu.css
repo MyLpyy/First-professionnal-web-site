@@ -1,0 +1,19 @@
+.loggedPopup {
+    position: fixed;
+    background-color: white;
+    transform: scale(0);
+}
+
+.loginPopup {
+    position: fixed;
+    background-color: white;
+    transform: scale(0);
+}
+
+.loggedPopup.active {
+    transform: scale(1);
+}
+
+.loginPopup.active {
+    transform: scale(1);
+}

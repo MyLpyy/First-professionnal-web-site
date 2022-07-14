@@ -1,0 +1,56 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #fefff5;
+    width: 350px;
+    max-width: 80%;
+    padding: 30px 20px 30px 20px;
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-button {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.popup-button button {
+    border: 2px solid lightgray;
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 30px 12px 30px;
+    margin-top: 20px;
+}
+
+.popup-button button:hover {
+    border: 2px solid white;
+    background-color: lightgray;
+}
+
+.popup-button .registerButton{
+    padding: 12px 37px 12px 37px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}

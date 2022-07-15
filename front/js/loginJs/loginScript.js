@@ -88,20 +88,17 @@ const popupButton = () => {
     overlay.addEventListener("click", () => {
         popup.classList.remove('active');
         overlay.classList.remove('active');
-        console.log("test3");
     });
 
     registerButton.forEach(button => {
         button.addEventListener("click", () => {
-            console.log("test");
-            window.location.replace("registration.html");
+            window.location.replace("./registration.html");
         })
     });
 
     retryButton.addEventListener("click", () => {
         popup.classList.remove('active');
         overlay.classList.remove('active');
-        console.log("test2");
     });
 
 }

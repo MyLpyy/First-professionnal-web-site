@@ -25,15 +25,21 @@ const auto_login = async () => {
                 const popup = document.querySelector("#loggedPopup");
                 const account = document.querySelector("#account");
                 const editProfile = document.querySelector("#editProfile");
+                const overlay = document.querySelector("#menuOverlay");
+                overlay.classList.add('active');
                 popup.classList.add('active');
                 account.setAttribute('href', `./userAccount.html?id=${userId}`);
                 editProfile.setAttribute('href', `./editAccount.html?id=${userId}`);
             } else {
                 const popup = document.querySelector("#loginPopup");
+                const overlay = document.querySelector("#menuOverlay");
+                overlay.classList.add('active');
                 popup.classList.add('active');
             }
         } else {
             const popup = document.querySelector("#loginPopup");
+            const overlay = document.querySelector("#menuOverlay");
+            overlay.classList.add('active');
             popup.classList.add('active');
         }
     } catch (err) {
@@ -43,8 +49,19 @@ const auto_login = async () => {
 
 const accountMenu = () => {
     const menuButton = document.querySelector("#menuButton");
+    const menuOverlay = document.querySelector("#menuOverlay");
+
     menuButton.addEventListener("click", () => {
         auto_login();
+    });
+
+    menuOverlay.addEventListener("click", () => {
+        const popup1 = document.querySelector("#loginPopup");
+        const popup2 = document.querySelector("#loggedPopup");
+        const overlay = document.querySelector("#menuOverlay");
+        overlay.classList.remove('active');
+        popup1.classList.remove('active');
+        popup2.classList.remove('active');
     });
 }
 accountMenu();

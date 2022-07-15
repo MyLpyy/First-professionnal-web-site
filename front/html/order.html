@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Plateforme de vetement de sport">
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/loginMenu.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -26,9 +27,28 @@
                         <a href="">
                             <li>Panier</li>
                         </a>
-                        <!-- <a href="">
-                            <li>Login</li>
-                        </a> -->
+                        <div class="menuPopup" id="menuPopup">
+                            <button type="button" class="menuButton" id="menuButton">Account</button>
+                            <div class="loggedPopup" id="loggedPopup">
+                                <div class="body">
+                                    <ul>
+                                        <li><img src=""><a id="account">My account</a></li>
+                                        <li><img src=""><a id="editProfile">Edit profile</a></li>
+                                        <li><img src=""><a href="">Help</a></li>
+                                        <li><img src=""><button type="button" class="logoutButton" id="logoutButton">Logout</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="loginPopup" id="loginPopup">
+                                <div class="body">
+                                    <ul>
+                                        <li><a href="./login.html">Login</a></li>
+                                        <li><a href="./registration.html">Register</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="menuOverlay"></div>
+                        </div>
                     </ul>
                 </nav>
             </div>

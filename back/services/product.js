@@ -43,11 +43,10 @@ async function getProductById(values) {
   return data;
 }
 
-/*fix 'NULL' issue + d'autres trucs*/
 async function addProduct(data) {
-  
+  console.log("toto", data);
   const keys = Object.keys(data).join(",");
-  const values = Object.values(data).map(value => `'${value}'`).join(",");
+  const values = Object.values(data).map(value => `"${value}"`).join(",");
 
   const result = await db.query(
     `INSERT INTO product (${keys}) VALUES (${values})`

@@ -24,8 +24,8 @@ CREATE TABLE user_as_products (
     product_id INTEGER UNSIGNED NOT NULL,
     order_id INTEGER UNSIGNED,
     status VARCHAR(255) DEFAULT 'PENDING', /*(PENDING, ORDERED, PAYED)*/
-    FOREIGN KEY (customers_id) REFERENCES customers(customers_id),
-    FOREIGN KEY (product_id) REFERENCES product(product_id)
+    FOREIGN KEY (customers_id) REFERENCES customers(id),
+    FOREIGN KEY (product_id) REFERENCES product(id)
 );
 
 CREATE TABLE orders (
@@ -33,7 +33,7 @@ CREATE TABLE orders (
     customers_id INTEGER UNSIGNED NOT NULL,
     status VARCHAR(255) DEFAULT 'PROCESSING', /*(PROCESSING, PENDING, COMPLETE, ERROR)*/
     ordered_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    FOREIGN KEY (customers_id) REFERENCES customers(customers_id)
+    FOREIGN KEY (customers_id) REFERENCES customers(id)
 );
 
 CREATE TABLE orders_adresses (
@@ -42,7 +42,7 @@ CREATE TABLE orders_adresses (
     adresse VARCHAR(255) NOT NULL,
     postal_code INTEGER NOT NULL,
     city VARCHAR(255) NOT NULL,
-    FOREIGN KEY (customers_id) REFERENCES customers(customers_id),
+    FOREIGN KEY (customers_id) REFERENCES customers(id),
     FOREIGN KEY (orders_id) REFERENCES orders(orders_id)
 );
 

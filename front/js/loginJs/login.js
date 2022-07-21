@@ -2,10 +2,11 @@ const API_ENDPOINT = "http://localhost:4001";
 
 const getUserLogin = () => {
     const form = document.querySelector(".LoginForm");
+
     return form;
 };
 
-const tokenGen = function() {
+const tokenGen = () => {
     const rand1 = Math.random().toString(36).substr(2);
     const rand2 = Math.random().toString(36).substr(2);
     const token = rand1 + rand2;
@@ -71,7 +72,7 @@ const loginVerification = async () => {
                     popup.classList.add('active');
                     overlay.classList.add('active');
                 }
-            }
+            } 
         } catch (err) {
             console.log(err);
         }

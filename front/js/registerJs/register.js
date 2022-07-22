@@ -33,6 +33,31 @@ const getExistingCustomer = async () => {
     }
 };
 
+/* const test = () => {
+    const customertest = {
+        firstname: "test",
+        lastname: "test",
+        phone_number: "",
+        email: "test2",
+        password: "form.password.value",
+        passwordConfirme: "form.passwordConfirme.value"
+    }
+
+const customerKey = [];
+const customerValue = [];
+
+for (const [key, value] of Object.entries(customertest)) {
+    if (value !== '') {
+        customerKey.push(key);
+        customerValue.push(value);
+    }
+}
+
+return customerKey, customerValue;
+}
+const test2 = test();
+console.log(test2.customerKey, test2.customerValue ); */
+
 const registerNewCustomer = async () => {
     const registerButton = document.querySelector("#registerButton");
     registerButton.addEventListener("click", async () => {

@@ -1,0 +1,47 @@
+.accountInformationData {
+    position: fixed;
+    background-color: white;
+    z-index: 10;
+    transform: scale(0);
+}
+
+.editAccountData {
+    position: fixed;
+    background-color: white;
+    z-index: 10;
+    transform: scale(0);
+}
+
+.orderHistoryData {
+    position: fixed;
+    background-color: white;
+    z-index: 10;
+    transform: scale(0);
+}
+
+.feedBackData {
+    position: fixed;
+    background-color: white;
+    z-index: 10;
+    transform: scale(0);
+}
+
+.accountInformationData.active {
+    position: static;
+    transform: scale(1);
+}
+
+.editAccountData.active {
+    position: static;
+    transform: scale(1);
+}
+
+.orderHistoryData.active {
+    position: static;
+    transform: scale(1);
+}
+
+.feedBackData.active {
+    position: static;
+    transform: scale(1);
+}

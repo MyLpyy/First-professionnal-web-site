@@ -25,11 +25,13 @@ const auto_login = async () => {
                 const popup = document.querySelector("#loggedPopup");
                 const account = document.querySelector("#account");
                 const editProfile = document.querySelector("#editProfile");
+                const feedback = document.querySelector("#feedback");
                 const overlay = document.querySelector("#menuOverlay");
                 overlay.classList.add('active');
                 popup.classList.add('active');
-                account.setAttribute('href', `./userAccount.html?id=${userId}`);
-                editProfile.setAttribute('href', `./editAccount.html?id=${userId}`);
+                account.setAttribute('href', `./userAccount.html?id=${userId}&menu=1`);
+                editProfile.setAttribute('href', `./userAccount.html?id=${userId}&menu=2`);
+                feedback.setAttribute('href', `./userAccount.html?id=${userId}&menu=3`);
             } else {
                 const popup = document.querySelector("#loginPopup");
                 const overlay = document.querySelector("#menuOverlay");
@@ -66,7 +68,7 @@ const accountMenu = () => {
 }
 accountMenu();
 
-const logout = (id) => {
+const logout = async (id) => {
     const logoutButton = document.querySelector("#logoutButton");
     logoutButton.addEventListener("click", async () => {
         try {

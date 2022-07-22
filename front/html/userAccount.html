@@ -8,6 +8,7 @@
     <meta name="description" content="Plateforme de vetement de sport">
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/loginMenu.css" rel="stylesheet">
+    <link href="../css/accountMenu.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -34,7 +35,7 @@
                                     <ul>
                                         <li><img src=""><a id="account">My account</a></li>
                                         <li><img src=""><a id="editProfile">Edit profile</a></li>
-                                        <li><img src=""><a href="">Help</a></li>
+                                        <li><img src=""><a id="feedback">Help</a></li>
                                         <li><img src=""><button type="button" class="logoutButton" id="logoutButton">Logout</button></li>
                                     </ul>
                                 </div>
@@ -57,7 +58,85 @@
 
     <main class="BlockContainer">
         <div class="WidthBlock">
-            
+            <div class="accountMenu">
+                <div class="accountInformation">
+                    <button type="button" class="informationButton" id="informationButton">Information</button>
+                </div>
+                <div class="orderHistory">
+                    <button type="button" class="historyButton" id="historyButton">Order history</button>
+                </div>
+                <div class="feedBack">
+                    <button type="button" class="feedbackButton" id="feedbackButton">Need Help ?</button>
+                </div>
+                <div class="logout">
+                    <button type="button" class="logoutMenuButton" id="logoutMenuButton">Logout !</button>
+                </div>
+            </div>
+            <div class="accountInformationData">
+                <div class="customerInformation">
+                    <H2>Contact :</H2>
+                    <div class="customerName">
+                        <p class="customerFirstname">Firstname : <span class="firstname">t</span></p>
+                        <p class="customerLastname">Lastname : <span class="lastname">y</span></p>
+                    </div>
+                    <p class="phoneNumber">0</p>
+                </div>
+                <div class="customerEmail">
+                    <h2>Email Adresse :</h2>
+                    <p class="email"></p>
+                </div>
+                <div class="editAccount">
+                    <button type="button" class="editButton" id="editButton">Edit</button>
+                </div>
+            </div>
+            <div class="editAccountData">
+                <section>
+                    <form method="get" class="editForm" onsubmit="return false">
+                        <div class="editCustomerEmail">
+                            <h2>Current Email Adresse :</h2>
+                            <p class="email"></p>
+                            <label for="email">New Email Adresse :</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+                        <div class="editCustomerPhoneNumber">
+                            <label for="phoneNumber">New Phone number :</label>
+                            <input type="tel" name="phoneNumber" id="phoneNumber" minlength="10" maxlength="10">
+                        </div>
+                        <div class="editCustomerPassword">
+                            <label for="password">Current password :</label>
+                            <input type="password" name="password" id="password" placeholder="•••••••••••" required><br>
+                            
+                            <label for="newPassword">New password :</label>
+                            <input type="password" name="newPassword" id="newPassword" placeholder="•••••••••••"><br>
+                            <label for="newPasswordConfirme">New password confirmation:</label>
+                            <input type="password" name="newPasswordConfirme" id="newPasswordConfirme" placeholder="•••••••••••">
+                        </div>
+                        <div class="confirmationButton">
+                            <input type="submit" value="Submit" class="editConfirmeButton" id="editConfirmeButton">
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="orderHistoryData">
+                <p>This place is still in developpement</p>
+            </div>
+            <div class="feedBackData">
+                <section>
+                    <form method="get" class="feddBackForm" onsubmit="return false">
+                        <div class="subjectFeedBack">
+                            <H3>Subject feedBack</H3>
+                            <input type="text" name="subjectFeedBack" id="subjectFeedBack" required>
+                        </div>
+                        <div class="textFeedBack">
+                            <h3>feedBack</h3>
+                            <textarea name="textFeedBack" id="textFeedBack" cols="70" rows="20" required></textarea>
+                        </div>
+                        <div class="submitFeedBack">
+                            <input type="submit" value="submit" id="submitFeedBackButton">
+                        </div>
+                    </form>
+                </section>
+            </div>
         </div>
     </main>
     <footer>
@@ -83,7 +162,8 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="../js/indexJs/loginMenu.js"></script>
+    <script type="module" src="../js/loginMenu.js"></script>
+    <script type="module" src="../js/userAccountJs/userAccount.js"></script>
 </body>
 
 </html>

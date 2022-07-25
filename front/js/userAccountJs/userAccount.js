@@ -6,7 +6,7 @@ const menu = search.get("menu");
 const accountButtonMenu = (userId) => {
 
     const information = document.querySelector("#informationButton");
-    const edit = document.querySelector("#editButton");
+    const edit = document.querySelectorAll("#editButton");
     const history = document.querySelector("#historyButton");
     const feedback = document.querySelector("#feedbackButton");
     const logoutMenu = document.querySelector("#logoutMenuButton");
@@ -14,8 +14,10 @@ const accountButtonMenu = (userId) => {
     information.addEventListener("click", () => {
         window.location.replace(`./userAccount.html?id=${userId}&menu=1`);
     });
-    edit.addEventListener("click", () => {
-        window.location.replace(`./userAccount.html?id=${userId}&menu=2`);
+    edit.forEach(button =>{
+        button.addEventListener("click", () => {
+            window.location.replace(`./userAccount.html?id=${userId}&menu=2`);
+        });
     });
     history.addEventListener("click", () => {
         window.location.replace(`./userAccount.html?id=${userId}&menu=3`);
@@ -65,6 +67,21 @@ const accountInformation = async (id) => {
 
 }
 accountInformation(id);
+
+const editAccount = async () => {
+
+}
+editAccount();
+
+const orderHistory = async () => {
+
+}
+orderHistory();
+
+const feedBack = async () => {
+
+}
+feedBack();
 
 const logout = async (id) => {
 

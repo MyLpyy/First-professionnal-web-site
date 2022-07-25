@@ -33,51 +33,35 @@ const getExistingCustomer = async () => {
     }
 };
 
-/* const test = () => {
-    const customertest = {
-        firstname: "test",
-        lastname: "test",
-        phone_number: "",
-        email: "test2",
-        password: "form.password.value",
-        passwordConfirme: "form.passwordConfirme.value"
+const renderCustomerData = () => {
+
+    const customer = getCustomerData();
+    const data = {};
+
+    for (const [key, value] of Object.entries(customer)) {
+        if (value !== '' && key !== 'passwordConfirme') {
+            data[key] = value;
+        }
     }
 
-const customerKey = [];
-const customerValue = [];
-
-for (const [key, value] of Object.entries(customertest)) {
-    if (value !== '') {
-        customerKey.push(key);
-        customerValue.push(value);
-    }
+    return data;
 }
-
-return customerKey, customerValue;
-}
-const test2 = test();
-console.log(test2.customerKey, test2.customerValue ); */
 
 const registerNewCustomer = async () => {
     const registerButton = document.querySelector("#registerButton");
     registerButton.addEventListener("click", async () => {
         try {
-            const customer = getCustomerData();
+            const customerBody = renderCustomerData();
+            const customerForm = getCustomerData();
             const customerExiste = await getExistingCustomer();
 
             if (!customerExiste) {
-                if (customer.password === customer.passwordConfirme) {
-                    if (!customer.firstname.match(/([^a-zA-Z- éèâà])/) && !customer.lastname.match(/([^a-zA-Z- ])/)) {
-                        if (customer.email.match(/\S+@\S+\.\S+/)) {
+                if (customerForm.password === customerForm.passwordConfirme) {
+                    if (!customerForm.firstname.match(/([^a-zA-Z- éèâà])/) && !customerForm.lastname.match(/([^a-zA-Z- ])/)) {
+                        if (customerForm.email.match(/\S+@\S+\.\S+/)) {
                             const response = await fetch(`${API_ENDPOINT}/customers/add`, {
                                 method: "POST",
-                                body: JSON.stringify({
-                                    "firstname": customer.firstname,
-                                    "lastname": customer.lastname,
-                                    "phone_number": customer.phone_number,
-                                    "email": customer.email,
-                                    "password": customer.password
-                                }),
+                                body: JSON.stringify(customerBody),
                                 headers: {
                                     "Content-Type": "application/json",
                                 },

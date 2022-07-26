@@ -14,7 +14,10 @@ app.use(
     extended: true,
   })
 );
-app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:4001/'
+}));
 
 app.use("/products", productRouter);
 app.use("/customers", customersRouter);

@@ -1,4 +1,4 @@
-const API_ENDPOINT = "http://localhost:4001";
+const API_ENDPOINT = "http://82.66.182.120:4001";
 
 const renderProduct = async () => {
     try {

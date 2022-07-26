@@ -6,7 +6,7 @@ const customersRouter = require('./routes/customers.js');
 const user_as_productsRouter = require('./routes/user_as_products');
 const ordersRouter = require('./routes/orders.js');
 const orders_adressesRouter = require('./routes/orders_adresses.js');
-/* const cors = require('cors'); */
+const cors = require('cors');
 
 app.use(express.json());
 app.use(
@@ -15,9 +15,7 @@ app.use(
   })
 );
 
-/* app.use(cors({
-  origin: 'http://localhost:4001/'
-})); */
+app.use(cors());
 
 app.use("/products", productRouter);
 app.use("/customers", customersRouter);

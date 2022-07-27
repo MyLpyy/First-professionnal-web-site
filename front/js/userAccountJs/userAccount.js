@@ -64,14 +64,127 @@ const accountMenu = (menuId) => {
 accountMenu(menu);
 
 const accountInformation = async (id) => {
-
+    try {
+        const response = await fetch(`${API_ENDPOINT}/customers/getByValues?value=${id}&col=id`);
+        const res = await response.json();
+        const customerInfo = res[0];
+        const firstname = document.querySelector('.firstname');
+            firstname.innerHTML = customerInfo.firstname;
+        const lastname = document.querySelector('.lastname');
+            lastname.innerHTML = customerInfo.lastname;
+        const phoneNumber = document.querySelector('.phoneNumber');
+            phoneNumber.innerHTML = `0${customerInfo.phone_number}`;
+        const email = document.querySelector('.email');
+            email.innerHTML = customerInfo.email;
+    } catch (err) {
+        console.log(err);
+    }
 }
 accountInformation(id);
 
-const editAccount = async () => {
+const getEditForm = () => {
+    
+    const form = document.querySelector(".editForm");
 
+    const editData = {
+        phone_number: form.phoneNumber.value,
+        email: form.email.value,
+        currentPassword: form.password.value,
+        password: form.newPassword.value,
+        passwordConfirme: form.newPasswordConfirme.value
+    }
+
+    return editData;
 }
-editAccount();
+
+const renderEditData = () => {
+
+    const customer = getEditForm();
+    const data = {};
+
+    for (const [key, value] of Object.entries(customer)) {
+        if (value !== '' && key !== 'passwordConfirme' && key !== 'currentPassword') {
+            data[key] = value;
+        }
+    }
+
+    return data;
+}
+
+const getPasswordConfirmation = async (id) => {
+    try {
+        const response = await fetch(`${API_ENDPOINT}/customers/getByValues?value=${id}&col=id`);
+        const password = await response.json();
+        const passwordForm = getEditForm();
+
+        if (password[0].password === passwordForm.currentPassword) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+const editAccount = async (userId) => {
+    const editButton = document.querySelector('#editConfirmeButton');
+    editButton.addEventListener("click", async () => {
+        try {
+            const editForm = getEditForm();
+            const EditData = renderEditData();
+            const passwordConfirmation = await getPasswordConfirmation(userId);
+            const editedPopup = document.querySelector('.editPopup');
+            const overlay = document.querySelector('#overlay');
+
+            if (passwordConfirmation) {
+                if (editForm.password === editForm.passwordConfirme) {
+                    for (const [key, value] of Object.entries(EditData)) {
+                        console.log(`${key}`, `${value}`);
+                        const response = await fetch(`${API_ENDPOINT}/customers/update`, {
+                            method: 'PUT',
+                            body: JSON.stringify({
+                                "id": userId,
+                                "updateCol": key,
+                                "value": `"${value}"`
+                            }),
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        });
+                        const res = await response.json();
+                        console.log(res);
+                    }
+                    editedPopup.classList.add('active');
+                    overlay.classList.add('active');
+
+                } else {
+                    window.alert('Les mots de passe ne correspondent pas !');
+                }
+            } else {
+                window.alert('Mot de passe incorrect !');
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    });
+}
+editAccount(id);
+
+const editPopup = () => {
+    const editedButton = document.querySelector('#editedButton');
+    const editedPopup = document.querySelector('.editPopup');
+    const overlay = document.querySelector('#overlay');
+    editedButton.addEventListener("click", () => {
+        editedPopup.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+    overlay.addEventListener("click", () => {
+        editedPopup.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+}
+editPopup();
 
 const orderHistory = async () => {
 

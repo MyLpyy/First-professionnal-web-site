@@ -79,14 +79,14 @@
                 <div class="customerInformation">
                     <H2>Contact :</H2>
                     <div class="customerName">
-                        <p class="customerFirstname">Firstname : <span class="firstname">t</span></p>
-                        <p class="customerLastname">Lastname : <span class="lastname">y</span></p>
+                        <p class="customerFirstname">Firstname : <span class="firstname"><!-- Firstname --></span></p>
+                        <p class="customerLastname">Lastname : <span class="lastname"><!-- Lastname --></span></p>
                     </div>
-                    <p class="phoneNumber">0</p>
+                    <p class="customerPhoneNumber">Tel : <span class="phoneNumber"><!-- Phone number --></span></p>
                 </div>
                 <div class="customerEmail">
                     <h2>Email Adresse :</h2>
-                    <p class="email"></p>
+                    <p class="email"><!-- Email --></p>
                 </div>
                 <div class="editAccount">
                     <button type="button" class="editButton" id="editButton">Edit</button>
@@ -140,6 +140,11 @@
                     </form>
                 </section>
             </div>
+            <div class="editPopup">
+                <p>Account edited successfully !</p>
+                <button type="button" class="editedButton" id="editedButton">Ok</button>
+            </div>
+            <div id="overlay"></div>
         </div>
     </main>
     <footer>

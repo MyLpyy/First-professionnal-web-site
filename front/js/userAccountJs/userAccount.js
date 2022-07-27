@@ -140,7 +140,6 @@ const editAccount = async (userId) => {
             if (passwordConfirmation) {
                 if (editForm.password === editForm.passwordConfirme) {
                     for (const [key, value] of Object.entries(EditData)) {
-                        console.log(`${key}`, `${value}`);
                         const response = await fetch(`${API_ENDPOINT}/customers/update`, {
                             method: 'PUT',
                             body: JSON.stringify({

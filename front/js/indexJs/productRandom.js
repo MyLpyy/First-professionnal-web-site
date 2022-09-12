@@ -1,4 +1,6 @@
-const API_ENDPOINT = "http://82.66.182.120:4001";
+/* const API_ENDPOINT = "http://82.66.182.120:4001"; */
+const API_ENDPOINT = "http://localhost:4001";
+
 
 const renderProduct = async () => {
     try {
@@ -12,7 +14,7 @@ const renderProduct = async () => {
                 <article>
                     <img src="${element.img_path}" alt="${element.name}">
                     <h3 class="productName">${element.name}</h3>
-                    <h4 class="productPrice">${element.price}</h4>
+                    <h4 class="productPrice">${element.price} €</h4>
                     <p class="productDescription">${element.description}</p>
                 </article>
             </a>

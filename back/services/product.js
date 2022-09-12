@@ -15,7 +15,7 @@ async function getEveryProduct() {
 async function randomProducts() {
 
   const rows = await db.query(
-    `SELECT * FROM product ORDER BY RAND() LIMIT 6`
+    `SELECT * FROM product ORDER BY RAND() LIMIT 8`
   );
 
   return rows;

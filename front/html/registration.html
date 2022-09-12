@@ -22,7 +22,7 @@
                 <nav>
                     <ul class="nav_panel" id="nav_panel">
                         <a class="test" href="./index.html">
-                            <li>Acceuil</li>
+                            <li>Accueil</li>
                         </a>
                         <a href="./cart.html">
                             <li>Panier</li>
@@ -35,7 +35,8 @@
                                         <li><img src=""><a id="account">My account</a></li>
                                         <li><img src=""><a id="editProfile">Edit profile</a></li>
                                         <li><img src=""><a href="">Help</a></li>
-                                        <li><img src=""><button type="button" class="logoutButton" id="logoutButton">Logout</button></li>
+                                        <li><img src=""><button type="button" class="logoutButton"
+                                                id="logoutButton">Logout</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -55,46 +56,50 @@
         </div>
     </header>
 
-    <main class="BlockContainer">
-        <div class="WidthBlock">
-            <div class="userRegistration">
-                <section>
-                    <form method="get" class="registrationForm" onsubmit="return 0, false">
-                        <div class="registrationFormData">
-                            <label for="firstname">Firstname :</label>
-                            <input type="text" name="firstname" id="firstname" placeholder="John" required>
-                        </div>
-                        <div class="registrationFormData">
-                            <label for="lastname">Lastname :</label>
-                            <input type="text" name="lastname" id="lastname" placeholder="Smith" required>
-                        </div>
-                        <div class="registrationFormData">
-                            <label for="phoneNumber">Tel :</label>
-                            <input type="tel" name="phoneNumber" id="phoneNumber" minlength="10" maxlength="10" placeholder="0610203040">
-                        </div>
-                        <div class="registrationFormData">
-                            <label for="email">Email :</label>
-                            <input type="text" name="email" id="email" placeholder="username@gmail.com" required>
-                        </div>
-                        <div class="registrationFormData">
-                            <label for="password">Password :</label>
-                            <input type="password" name="password" id="password" placeholder="•••••••••••" required>
-                        </div>
-                        <div class="registrationFormData">
-                            <label for="passwordConfirme">Confirme password :</label>
-                            <input type="password" name="passwordConfirme" id="passwordConfirme" placeholder="•••••••••••" required>
-                        </div>
-                        <div class="registrationFormData">
-                            <input type="submit" value="Register" id="registerButton">
-                        </div>
-                    </form>
-                </section>
+    <main>
+        <div class="BlockContainer">
+            <div class="WidthBlock">
+                <div class="userRegistration">
+                    <section>
+                        <form method="get" class="registrationForm" onsubmit="return 0, false">
+                            <div class="registrationFormData">
+                                <label for="firstname">Firstname :</label>
+                                <input type="text" name="firstname" id="firstname" placeholder="John" required>
+                            </div>
+                            <div class="registrationFormData">
+                                <label for="lastname">Lastname :</label>
+                                <input type="text" name="lastname" id="lastname" placeholder="Smith" required>
+                            </div>
+                            <div class="registrationFormData">
+                                <label for="phoneNumber">Tel :</label>
+                                <input type="tel" name="phoneNumber" id="phoneNumber" minlength="10" maxlength="10"
+                                    placeholder="0610203040">
+                            </div>
+                            <div class="registrationFormData">
+                                <label for="email">Email :</label>
+                                <input type="text" name="email" id="email" placeholder="username@gmail.com" required>
+                            </div>
+                            <div class="registrationFormData">
+                                <label for="password">Password :</label>
+                                <input type="password" name="password" id="password" placeholder="•••••••••••" required>
+                            </div>
+                            <div class="registrationFormData">
+                                <label for="passwordConfirme">Confirme password :</label>
+                                <input type="password" name="passwordConfirme" id="passwordConfirme"
+                                    placeholder="•••••••••••" required>
+                            </div>
+                            <div class="registrationFormData">
+                                <input type="submit" value="Register" id="registerButton">
+                            </div>
+                        </form>
+                    </section>
+                </div>
             </div>
         </div>
     </main>
     <footer>
-        <div class="BlockContainer footerMain">
-            <div class="Block">
+        <div class="BlockContainer footerPrimary">
+            <div class="WidthBlock">
                 <div>
                     <img class="logo" src="../images/logo.jpg" alt="Logo Resell mj">
                 </div>
@@ -110,7 +115,7 @@
             </div>
         </div>
         <div class="BlockContainer footerSecondary">
-            <div class="Block">
+            <div class="WidthBlock">
                 <p>© Copyright 2022 - 2022 | Ressel Mj </p>
             </div>
         </div>

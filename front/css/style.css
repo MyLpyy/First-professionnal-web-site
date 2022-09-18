@@ -5,7 +5,7 @@
     src: url(../fonts/Poppins-Medium.ttf);
 }
 
-body {
+body {  
     font-family: var(--font);
     margin: 0;
     background-color: var(--color3);
@@ -180,6 +180,7 @@ h2 {
 
 .Items {
     background-color: var(--color4);
+    height: 100%;
 }
 
 .Items section {
@@ -263,12 +264,11 @@ h2 {
 /**********/
 
 footer {
-    display: flex;
-    flex-direction: column;
     background-color: var(--color1);
     font-size: 16px;
     color: var(--color4);
 }
+
 footer .footerPrimary,
 footer .footerSecondary {
     width: 100%;
@@ -283,6 +283,7 @@ footer .footerSecondary {
     display: flex;
     justify-content: space-around;
 }
+
 .footerPrimary .WidthBlock div {
     display: flex;
     align-items: center;
@@ -293,6 +294,7 @@ footer .footerSecondary {
 .footerSecondary {
     padding-top: 10px;
 }
+
 .footerSecondary .WidthBlock {
     display: flex;
     justify-content: center;

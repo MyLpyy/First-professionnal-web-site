@@ -1,5 +1,5 @@
-const API_ENDPOINT = "http://82.66.182.120:4001";
-/* const API_ENDPOINT = "http://localhost:4001"; */
+/* const API_ENDPOINT = "http://82.66.182.120:4001"; */
+const API_ENDPOINT = "http://localhost:4001";
 const search = new URLSearchParams(window.location.search);
 const id = search.get("id");
 

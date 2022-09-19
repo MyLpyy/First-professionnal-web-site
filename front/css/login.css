@@ -1,12 +1,35 @@
+.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+}
+
+.LoginBlock {
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    padding: 30px 80px 30px 80px;
+    max-width: 150px;
+    border: 2px solid var(--color1);
+    border-radius: 15px;
+    background-color: var(--color4);
+}
+
+.LoginBlock form div {
+    margin: 5px;
+}
+
 .popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    border: 1px solid black;
+    border: 1px solid var(--color1);
     border-radius: 10px;
     z-index: 10;
-    background-color: #fefff5;
+    background-color: var(--color4);
     width: 350px;
     max-width: 80%;
     padding: 30px 20px 30px 20px;
@@ -23,16 +46,16 @@
 }
 
 .popup-button button {
-    border: 2px solid lightgray;
-    background-color: white;
+    border: 2px solid var(--color1);
+    background-color: var(--color4);
     border-radius: 10px;
     padding: 12px 30px 12px 30px;
     margin-top: 20px;
 }
 
 .popup-button button:hover {
-    border: 2px solid white;
-    background-color: lightgray;
+    border: 2px solid var(--color4);
+    background-color: var(--color1);
 }
 
 .popup-button .registerButton{

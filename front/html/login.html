@@ -36,7 +36,8 @@
                                         <li><img src=""><a id="account">My account</a></li>
                                         <li><img src=""><a id="editProfile">Edit profile</a></li>
                                         <li><img src=""><a href="">Help</a></li>
-                                        <li><img src=""><button type="button" class="logoutButton" id="logoutButton">Logout</button></li>
+                                        <li><img src=""><button type="button" class="logoutButton"
+                                                id="logoutButton">Logout</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -56,34 +57,36 @@
         </div>
     </header>
 
-    <main class="BlockContainer">
-        <div class="WidthBlock">
-            <div class="LoginBlock">
+    <main>
+        <div class="BlockContainer">
+            <div class="WidthBlock Login">
                 <h2>Login</h2>
-                <form method="get" class="LoginForm" onsubmit="return false">
-                    <div class="UserBlock">
-                        <input type="text" name="username" id="username" placeholder="username@gmail.com">
-                        <label for="username">Username :</label>
+                <div class="LoginBlock">
+                    <form method="get" class="LoginForm" onsubmit="return false">
+                        <div class="UserBlock">
+                            <label for="username">Username :</label>
+                            <input type="text" name="username" id="username" placeholder="username@gmail.com">
+                        </div>
+                        <div class="UserBlock">
+                            <label for="password">Password :</label>
+                            <input type="password" name="password" id="password" placeholder="•••••••••••">
+                        </div>
+                        <div class="submitBlock">
+                            <input type="submit" value="Login" id="loginButton">
+                            <button type="button" class="registerButton" id="registerButton">Register</button>
+                        </div>
+                    </form>
+                    <div class="popup" id="popup">
+                        <div class="popup-body">
+                            L'email ou le mot de passe renseigner est incorrect ou n'existe pas.
+                        </div>
+                        <div class="popup-button">
+                            <button type="button" class="retryButton" id="retryButton">Réessayer</button>
+                            <button type="button" class="registerButton" id="registerButton">Register</button>
+                        </div>
                     </div>
-                    <div class="UserBlock">
-                        <input type="password" name="password" id="password" placeholder="•••••••••••">
-                        <label for="password">Password :</label>
-                    </div>
-                    <div class="submitBlock">
-                        <input type="submit" value="Login" id="loginButton">
-                        <button type="button" class="registerButton" id="registerButton">Register</button>
-                    </div>
-                </form>
-                <div class="popup" id="popup">
-                    <div class="popup-body">
-                        L'email ou le mot de passe renseigner est incorrect ou n'existe pas.
-                    </div>
-                    <div class="popup-button">
-                        <button type="button" class="retryButton" id="retryButton">Réessayer</button>
-                        <button type="button" class="registerButton" id="registerButton">Register</button>
-                    </div>
+                    <div id="overlay"></div>
                 </div>
-                <div id="overlay"></div>
             </div>
         </div>
     </main>
